@@ -14,8 +14,11 @@ The network uses a diamond topology connecting two virtual hosts (`h1`, `h2`) ac
 
 ```
             +--- s2 (Primary Path) ---+
-h1 (Sender) --- s1                     s4 --- h2 (Receiver)
-            +--- s3 (Alternate Path) -+
+
+```
+
+h1 (Sender) --- s1                        s4 --- h2 (Receiver)
++--- s3 (Alternate Path) -+
 
 ```
 
