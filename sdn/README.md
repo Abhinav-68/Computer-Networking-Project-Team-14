@@ -139,7 +139,7 @@ mininet> h2 python3 app/receiver.py &
 ```
 
 
-2. **Start Sender on `h1**`:
+2. **Start Sender on `h1`**:
 
 
 ```bash
