@@ -74,3 +74,24 @@ start the sender and receiver, trigger a link failure, and collect results.
 Mention any test that could not be completed, any missing measurements,
 and any assumptions made during the experiment.
 
+## Mininet UDP Packet-Loss Test
+
+### Test Setup
+- Topology: Mininet with sender `h1` and receiver `h2`
+- Sender IP: `10.0.0.1`
+- Receiver IP: `10.0.0.2`
+- Protocol: UDP
+- Simulated packet loss: 30% using Linux `tc netem` on `h1-eth0`
+- Packets requested: 10
+- ACK timeout: 1 second
+- Maximum retries per packet: 5
+
+### Results
+- Packets requested: 10
+- Packets acknowledged: 10
+- Unacknowledged packets: 0
+- Retransmissions: 6
+- Sender run ID: `8efe090da8d6`
+
+### Conclusion
+In this test, the sender successfully delivered all 10 packets despite simulated network loss. Six retransmissions were recorded, demonstrating the sender's retry and acknowledgement mechanism. The test was performed in Mininet, not on a physical network.
