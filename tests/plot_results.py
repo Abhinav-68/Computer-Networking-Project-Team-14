@@ -51,7 +51,7 @@ def main():
         loss.append((lost / sent * 100) if sent else 0.0)
 
         recovery = row["recovery_time_ms"].strip()
-        if recovery:
+        if recovery and recovery.upper()!="N/A" :
             recovery_names.append(row["test_name"])
             recovery_values.append(float(recovery))
 
@@ -86,3 +86,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
